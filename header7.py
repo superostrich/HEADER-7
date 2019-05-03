@@ -40,7 +40,7 @@ for p in file_path:
     h=(binascii.hexlify(f))
     header = binascii.unhexlify(h[0x0:0x80*2])
 
-    if (header == binascii.unhexlify(dxt1_4K) or header == binascii.unhexlify(dxt5_4K) or header == binascii.unhexlify(ati2_4K) or header == binascii.unhexlify(dxt1_2K) or header == binascii.unhexlify(dxt5_2K) or header == binascii.unhexlify(ati2_2K) or header == binascii.unhexlify(dxt1_1K) or header == binascii.unhexlify(dxt5_1K) or header == binascii.unhexlify(ati2_1K)):
+    if p.endswith('.dds'):
         file = open(filename+".ubulk","wb")
         file.write(binascii.unhexlify(h[0x80*2:]))
         file.close
