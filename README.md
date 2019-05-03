@@ -1,10 +1,8 @@
 # HEADER-7
-A simple tool to add and remove `.dds` headers.
 
-It was made to speed up the texture conversion process for Ace Combat 7 modding.
+A fork of CapitanRetraso's HEADER-7 tool.
 
+It has been modified to simply check for a .dds extension on the input file, rather than look for a known header.  
 
 Usage: `header7 <file>`
-
-You can also drag & drop to the script
 
