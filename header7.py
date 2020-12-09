@@ -40,12 +40,11 @@ for p in file_path:
     h=(binascii.hexlify(f))
     header = binascii.unhexlify(h[0x0:0x80*2])
 
-    if p.endswith('.dds'):
-        file = open(filename+".ubulk","wb")
-        file.write(binascii.unhexlify(h[0x80*2:]))
-        file.close
-        sys.exit
-
+    if (p.endswith('.dds') or p.endswith('.DDS')):
+	    file = open(filename+".ubulk","wb")
+	    file.write(binascii.unhexlify(h[0x80*2:]))
+	    file.close
+	    sys.exit
 
     else:
         print("\n   SELECT HEADER: \n\n   1) DXT1 4K \n   2) DXT5 4K \n   3) ATI2 4K \n   4) DXT1 2K \n   5) DXT5 2K\n   6) ATI2 2K \n   7) DXT1 1K \n   8) DXT5 1K \n   9) ATI2 1K \n\n")
